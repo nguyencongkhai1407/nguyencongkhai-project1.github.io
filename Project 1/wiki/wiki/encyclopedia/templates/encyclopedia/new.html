@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    New Page
+{% endblock %}
+
+{% block body %}
+    <h1 style="text-align:center; font-size:40px;"> Create New Page</h1>
+    <hr>
+    <form action="/wiki/new" method="POST">
+        {% csrf_token %}
+        <input class="form-control form-control-lg " name="title" type="text" placeholder="Title" required>
+        <hr>
+        <label for="markdown" style="font-size:20px;">Markdown content for the page:</label>
+        <textarea style="display:block; margin-bottom:10px;" name="markdown" required>
+        </textarea>
+        <button type="submit" class="btn btn-primary btn-lg" >Create</button>
+    </form>
+    
+  
+{% endblock %}

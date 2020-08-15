@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit {{title}}
+{% endblock %}
+{% block body %}
+    
+
+    <form method ="POST">
+        {% csrf_token %}
+        <div style="padding-top:20px;"><textarea name="mark" cols="30" rows="10">{{markdown}}</textarea>
+        </div>
+        <button class="btn btn-primary btn-lg active" type="submit" aria-pressed="true">Save</a>
+    </form>
+{% endblock %}
